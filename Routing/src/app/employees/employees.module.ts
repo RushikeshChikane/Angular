@@ -6,10 +6,10 @@ import { EmployeesListComponent } from './employees-list/employees-list.componen
 
 @NgModule({
   declarations: [
-    EmployeesListComponent
+    
   ],
   exports:[
-  EmployeesListComponent
+
   ],
   imports: [
     CommonModule

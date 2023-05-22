@@ -7,19 +7,20 @@ import { EmployeesModule } from './employees/employees.module';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ProjectComponent } from './project/project.component'; 
-import { RoutingComponent} from './routing/routing.component';
-import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes=[
-  {path:'', redirectTo:'/login', pathMatch:'full'},
-  {path:'login',component : LoginComponent},
-  {path:'routing', component:RoutingComponent }
-  // children: [
-  //   // {path:'customer', component: CustomerlistComponent},
-  //   // {path:'product', component: ProductComponent},
-  //   // {path:'aboutus', component: AboutUsComponent},
-  //   // {path:'home', component: HomeComponent},
-  // ]
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'about-us', component:  AboutUsComponent },
+      { path: 'project', component: ProjectComponent }
+    ]
+  },
 
 ]
 
@@ -28,14 +29,14 @@ const routes: Routes=[
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RoutingComponent,
     AboutUsComponent,
-    ProjectComponent,
-    EmployeesListComponent
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    EmployeesModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

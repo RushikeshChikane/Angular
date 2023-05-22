@@ -1,49 +1,51 @@
 
   import { Injectable } from '@angular/core';
-  import { User } from './User';
+  
   
   @Injectable({
     providedIn: 'root'
   })
   export class AuthService {
-  
-    users : User []=[
+
+    constructor() { }
+
+    users : any []=[
       {
-        'email':'Pragati.B@gmail.com',
-        'password':'password',
-        'role':'Admin'
+        "userId":1,
+        "userName":"Abhay",
+        "password":"password",
+        "role":"Admin"
       },
       {
-        'email':'Rushikesh.C@gmail.com',
-        'password':'password',
-        'role':'Customer'
+        "userId":2,
+        "userName":"Sahil",
+        "password":"password",
+        "role":"User"
       },
       {
-        'email':'Akash.A@gmail.com',
-        'password':'password',
-        'role':'Employee'
+        "userId":3,
+        "userName":"Shubham",
+        "password":"password",
+        "role":"User"
       },
       {
-        'email':'Akashay.T@gmail.com',
-        'password':'password',
-        'role':'Employee'
-      },
-      {
-        'email':'Rohit.G@gmail.com',
-        'password':'password',
-        'role':'Customer'
-      },
-    ]
+        "userId":4,
+        "userName":"Jayesh",
+        "password":"password",
+        "role":"Admin"
+      }
+    ];
+    
+    
     isLogin = false;
     loggedIn:any;
-    constructor() { }
+    
   
-    logIn(email:string,password:string,role:string):boolean{
-      const user=this.users.find((u)=>u.email ===email && u.password===password)
+    logIn(username:string,password:string):boolean{
+      const user=this.users.find((u)=>u.userName ===username && u.password===password)
       if(user){
-        this.loggedIn=user;
-        localStorage.setItem("role",user.role)
-        return true;
+        localStorage.setItem("role",user.role);
+         return true;
       }
       return false;
     }

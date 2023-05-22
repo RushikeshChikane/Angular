@@ -1,6 +1,7 @@
 
   import { Component } from '@angular/core';
   import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
   
   @Component({
     selector: 'app-login',
@@ -9,24 +10,27 @@
   })
   export class LoginComponent {
   
-    email:string|any;
-    password:string|any;
-    role:string|any;
-    loggedIn:any;
+    userName:string |any;
+    password:string |any
+   loggedIn:any;
+   role:any;
   
-    constructor(private svc : AuthService){}
+  constructor(private svc:AuthService,private router:Router){}
   
-    onLogin(form:any){
-      console.log(form);
-      if(this.svc.logIn(this.email,this.password,this.role)){
-        alert("Login Successfull");
-        this.loggedIn=true;
-        
-      }
-      else{
-        alert("Login Failed");
-      }
+  
+  logIn(){
+    if(this.svc.logIn(this.userName,this.password)){
+      console.log("Login button clicked");
+      this.loggedIn=true;
+      console.log("user is valid");
+      this.router.navigate(['/home']);
+      return true;
     }
+    else{
+      console.log("Invalid login");
+      return false;
+    }
+  }
   
   }
 
