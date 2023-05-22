@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { EmployeesModule } from './employees/employees.module'; 
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ProjectComponent } from './project/project.component'; 
@@ -35,7 +34,6 @@ const routes: Routes=[
   imports: [
     BrowserModule,
     FormsModule,
-    EmployeesModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
