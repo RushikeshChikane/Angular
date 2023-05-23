@@ -10,27 +10,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
-import { SigninComponent } from './signin/signin.component';
 
-// const routes: Routes=[
-//   { path: '', redirectTo: '/login', pathMatch: 'full' },
-//   { path: 'login', component: LoginComponent },
-//   {
-//     path: 'home',
-//     component: HomeComponent,
-//     children: [
-//       { path: '', redirectTo: 'home', pathMatch: 'full' },
-//       { path: 'about-us', component:  AboutUsComponent },
-//       { path: 'project', component: ProjectComponent }
-//     ]
-//   },
-// ]
-
-export const routes: Routes = [
+const routes: Routes=[
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'about-us', component: AboutUsComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'project', component: ProjectComponent }
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'about-us', component:  AboutUsComponent },
+      { path: 'project', component: ProjectComponent }
+    ]
+  },
+
 ]
 
 @NgModule({
@@ -39,8 +32,7 @@ export const routes: Routes = [
     LoginComponent,
     HomeComponent,
     AboutUsComponent,
-    ProjectComponent,
-    SigninComponent
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

@@ -11,25 +11,18 @@ import { User } from '../user';
   })
   export class LoginComponent {
   
-    loggedIn: boolean = false;
-    role: any;
-    status: boolean = false;
-    signinstatus: boolean = false;
-    signout: boolean = false;
-
    user : User ={
     email : '',
     password: ''
    }
-  
+   loggedIn:any;
+   role:any;
    
    constructor (private svc: AuthService,private router:Router){}
 
    logIn(){
     this.svc.logIn(this.user).subscribe((response)=>{
       localStorage.setItem('jwtToken',response.token);
-      this.loggedIn = true;
-      this.signout = true;
       console.log(response.token)
       localStorage.setItem("jwt",response.token)
       console.log(response);
@@ -37,18 +30,6 @@ import { User } from '../user';
       console.log(role);
     })
    }
-
-   login() {
-    this.status = true;
-    this.signinstatus = true;
-  }
-  logout() {
-    this.loggedIn = false;
-    this.signinstatus = false;
-    this.signout = false;
-    this.status = false;
-    localStorage.removeItem("jwtToken");
-  }
 
 
   

@@ -7,15 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  token=localStorage.getItem("jwtToken");
-  status:boolean=true;
-  
+  role=localStorage.getItem("role");
+  statusAdmin:boolean=false;
+  statusUser:boolean=false
   
   
   ngOnInit(): void {
-  console.log(this.token)
-    if(this.token ==null){
-      this.status=false;
+  
+    if(this.role=="Admin"){
+      this.statusAdmin=true;
+    }
+    if(this.role=="User"){
+      this.statusUser=true;
     }
   }
 

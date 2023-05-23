@@ -20,13 +20,21 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 
     getRoleFromToken(): string {
-      const token = localStorage.getItem('jwtToken');  
+
+      const token = localStorage.getItem('jwtToken');
+      
      if (token) {
+      
        const decodedToken: any = this.JWTHelper.decodeToken(token)
+      
        const role = localStorage.setItem('Role', decodedToken.Role)
+      
        return decodedToken.role;
+      
      }
+      
      return '';
+      
     }
 
     

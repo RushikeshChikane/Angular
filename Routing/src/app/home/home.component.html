@@ -1,5 +1,6 @@
-<p>home works!</p>
-<a  [routerLink]="['/home']">Home</a> | 
-<a *ngIf="statusAdmin" [routerLink]="['/home/about-us']">About Us</a> |
-<a *ngIf="statusUser" [routerLink]="['/home/project']">Projects</a>
+
+<p>Home</p>
+<div>
+    <a *ngIf="status" [routerLink]="['about-us']">About Us</a> | <a *ngIf="status" [routerLink]="['project']">Projects</a>
+</div>
 <router-outlet></router-outlet>

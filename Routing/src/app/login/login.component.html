@@ -1,13 +1,35 @@
-<form (ngSubmit)="logIn()">
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
-<br>
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
-  <br>
 
-  <button type="submit">Login</button>
+<button type="submit" (click)="login()" *ngIf="signinstatus==false">SignIn</button>
+<button type="submit" (click)="logout()" *ngIf="signout==true">SignOut</button>
+<div *ngIf="status">   
+<form (ngSubmit)="logIn()" *ngIf="loggedIn==false">
+  <table>
+    <tr>
+      <td>
+        <label for="email">Email:</label>
+      </td>
+      <td>
+        <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="password">Password:</label>
+      </td>
+      <td>
+        <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <button type="submit">Login</button>
+      </td>
+    </tr>
+  </table>
 </form>
+</div>
 <div *ngIf="loggedIn">
   <app-home></app-home>
 </div>
