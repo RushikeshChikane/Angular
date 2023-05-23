@@ -9,7 +9,6 @@ import { ProjectComponent } from './project/project.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 
 const routes: Routes=[
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -41,7 +40,7 @@ const routes: Routes=[
     CommonModule,
     HttpClientModule,
   ],
-  providers: [JwtHelperService,{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

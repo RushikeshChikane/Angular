@@ -7,9 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ProjectComponent } from './project/project.component'; 
 import { RouterModule, Routes } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 
 const routes: Routes=[
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -37,11 +34,9 @@ const routes: Routes=[
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes),
-    CommonModule,
-    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [JwtHelperService,{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

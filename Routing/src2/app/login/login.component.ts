@@ -15,6 +15,7 @@ import { User } from '../user';
     email : '',
     password: ''
    }
+   
    loggedIn:any;
    role:any;
    
@@ -22,12 +23,8 @@ import { User } from '../user';
 
    logIn(){
     this.svc.logIn(this.user).subscribe((response)=>{
-      localStorage.setItem('jwtToken',response.token);
-      console.log(response.token)
-      localStorage.setItem("jwt",response.token)
-      console.log(response);
-      const role=this.svc.getRoleFromToken();
-      console.log(role);
+        console.log(response.token);
+        console.log(response);
     })
    }
 
