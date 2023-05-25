@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { SigninComponent } from './signin/signin.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 // const routes: Routes=[
 //   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -30,7 +32,10 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'project', component: ProjectComponent }
+  { path: 'project', component: ProjectComponent },
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'tasks', component: TasksComponent }
+
 ]
 
 @NgModule({
@@ -40,7 +45,9 @@ export const routes: Routes = [
     HomeComponent,
     AboutUsComponent,
     ProjectComponent,
-    SigninComponent
+    SigninComponent,
+    ContactsComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,

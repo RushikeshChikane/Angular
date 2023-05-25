@@ -18,6 +18,11 @@ import { JwtHelperService } from '@auth0/angular-jwt';
       return this.httpClient.post<User>(url,user);
     }
 
+    getEmpById(empid:number):Observable<any>{
+      let url = "http://localhost:5230/api/employees/getbyid/"+empid;
+      return this.httpClient.get(url);
+    }
+
 
     getRoleFromToken(): string {
       const token = localStorage.getItem('jwtToken');  
@@ -27,6 +32,16 @@ import { JwtHelperService } from '@auth0/angular-jwt';
        return decodedToken.role;
      }
      return '';
+    }
+
+    getEmployeeIdFromToken(): string {
+      const token = localStorage.getItem('jwtToken');
+      if (token) {
+        const decodedToken: any = this.JWTHelper.decodeToken(token);
+        console.log(decodedToken.empId);
+        return decodedToken.empId;
+      }
+      return '';
     }
 
     

@@ -11,6 +11,7 @@ import { User } from '../user';
   })
   export class LoginComponent {
   
+    validUser : boolean=false;
     loggedIn: boolean = false;
     role: any;
     status: boolean = false;
@@ -27,13 +28,17 @@ import { User } from '../user';
 
    logIn(){
     this.svc.logIn(this.user).subscribe((response)=>{
+      //first save the jwt token in local storage
       localStorage.setItem('jwtToken',response.token);
+      const role=this.svc.getRoleFromToken();//decode role from token which is stored in localstorage
+      const EmployeeId = this.svc.getEmployeeIdFromToken();//decode employee id from token which is stored in localstorage
+      localStorage.setItem('role',role);
+      localStorage.setItem('employeeId',EmployeeId);
+      this.validUser = true;
       this.loggedIn = true;
       this.signout = true;
-      console.log(response.token)
-      localStorage.setItem("jwt",response.token)
+      console.log(response.token);
       console.log(response);
-      const role=this.svc.getRoleFromToken();
       console.log(role);
     })
    }
@@ -43,11 +48,14 @@ import { User } from '../user';
     this.signinstatus = true;
   }
   logout() {
+    this.validUser=false;
     this.loggedIn = false;
     this.signinstatus = false;
     this.signout = false;
     this.status = false;
     localStorage.removeItem("jwtToken");
+    localStorage.removeItem("role");
+    localStorage.removeItem("employeeId");
   }
 
 
