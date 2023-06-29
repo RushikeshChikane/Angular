@@ -175,7 +175,7 @@
 
 <details>
  <summary>35.What is Serverless architecture?</summary>
-  <p>Serverless Architecture is a termthat refersto folowing:</p>
+  <p>Serverless Architecture is a term that refers to folowing:</p>
     <ol>
         <li>An Application that depends on a third-party service.</li>
         <li>An Application in which Code is run on ephemeral containers.</li>
