@@ -110,7 +110,7 @@
               <li>Applying updates to applications</li>
               </ol>
         <li><b>Nodes :</b>A Node in Kubernetes is responsible for running an application. The Node can be a Virtual Machine or a Computer in the cluster. There is software called Kubelet on each node.This software is used for managing the node and communicating with the Master node in cluster.</li>
-        <li>There is a Kubernetes API that is used by Nodes to communicate with the Master. When we deploy an application on Kubernetes, we request Master to start application containers on Nodes.</li>
+  <p>There is a Kubernetes API that is used by Nodes to communicate with the Master. When we deploy an application on Kubernetes, we request Master to start application containers on Nodes.</p>
     </ol>
 </details>
 
@@ -146,7 +146,7 @@
 
 <details>
  <summary>32.What are the main services of AWS that you have used?</summary>
-  <p>We use folowingmainservices ofAWS inour environment:</p>
+  <p>We use following main services of AWS i nour environment:</p>
     <ol>
         <li><b>EC2 :</b>This is the Elastic Compute Cloud by Amazon. It is used to for providing computing capability to a system. We can use it in places of our standalone servers. We can deploy different kinds of applications on C2.</li>
         <li><b>S3 :</b>We use S3 in Amazon for our storage needs</li>
