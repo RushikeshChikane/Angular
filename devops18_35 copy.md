@@ -146,7 +146,7 @@
 
 <details>
  <summary>32.What are the main services of AWS that you have used?</summary>
-  <p>We use following main services of AWS i nour environment:</p>
+  <p>We use following main services of AWS in our environment:</p>
     <ol>
         <li><b>EC2 :</b>This is the Elastic Compute Cloud by Amazon. It is used to for providing computing capability to a system. We can use it in places of our standalone servers. We can deploy different kinds of applications on C2.</li>
         <li><b>S3 :</b>We use S3 in Amazon for our storage needs</li>
