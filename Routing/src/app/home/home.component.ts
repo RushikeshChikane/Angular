@@ -10,14 +10,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private svc : AuthService){}
   
-  empFirstName: string | any
-  empLastName: string | any
+  FirstName: string | any
+  LastName: string | any
   id: number | any
   statusDeveloper: boolean = false;
   statusConsultant: boolean = false
   statusTester: boolean = false
   statusManager: boolean = false
-  empid = localStorage.getItem('employeeId') || '{}';
+  empid = localStorage.getItem('Id') || '{}';
   role = localStorage.getItem("role")
   token=localStorage.getItem("jwtToken");
   status:boolean=true;
@@ -45,8 +45,8 @@ export class HomeComponent implements OnInit {
     console.log(this.empid);
     this.id = parseInt(this.empid);
     this.svc.getEmpById(this.id).subscribe((Response) => {
-      this.empFirstName = Response.employeeFirstName;
-      this.empLastName = Response.employeeLastName;
+      this.FirstName = Response.FirstName;
+      this.LastName = Response.LastName;
       console.log(Response);
     })
   }

@@ -33,7 +33,7 @@ import { User } from '../user';
       const role=this.svc.getRoleFromToken();//decode role from token which is stored in localstorage
       const EmployeeId = this.svc.getEmployeeIdFromToken();//decode employee id from token which is stored in localstorage
       localStorage.setItem('role',role);
-      localStorage.setItem('employeeId',EmployeeId);
+      localStorage.setItem('Id',EmployeeId);
       this.validUser = true;
       this.loggedIn = true;
       this.signout = true;
